@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>C# Documentation</header>
+      <ul>
+        <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+        <li>
+          <a href="#C#_Documentation_Example" class="nav-link"
+            >C# Documentation Example</a
+          >
+        </li>
+        <li><a href="#Some_points" class="nav-link">Some points</a></li>
+        <li>
+          <a href="#In-depth_of_C#_Documentation" class="nav-link"
+            >In-depth of C# Documentation</a
+          >
+        </li>
+        <li>
+          <a href="#Problems_with_the_C#_Documenter" class="nav-link"
+            >Problems with the C# Documenter</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+
+        <p>
+          Documentation has been always a neglected task in the software
+          development life cycle. While developing applications, most of the
+          software developing professionals including senior professionals tend
+          to forget about documentation although everyone is aware about the
+          difficulties that are faced during code maintenance application.
+          Documentation is a very important aspect specially when developing
+          large and very big applications involving a number of modules.
+        </p>
+        <p>
+          When developing an application with C#, we can minimize the effort of
+          making and maintaining the application documentation. As a C#
+          application developer, it is common to give inline comments, these
+          inline comments can be the source to generate a strong and more
+          accurate documentation. Inline comments are the most important part of
+          any code as they provide valuable information about the part of the
+          code that is written. And most importantly it is written when the
+          system is constructed. One of the wonderful features of the C#
+          compiler is that it supports automatic creation of documentation using
+          comments written in the code, the only distinction being that the
+          documentation is produced in XML. Unlike other automated documentation
+          provided by various programming languages, that generates HTML based
+          documentation, C# produces in XML but there are tools available that
+          take XML files as the input and produce HTML based documentation. As
+          the C# stores all the comments in an XML file, users have the
+          flexibility to develop excellent documentation from C#. Code comments,
+          user manuals, developer manuals, test plans, and many other documents
+          can be generated from a single source using XML tags.
+        </p>
+        <p>
+          The process of generating an XML based documentation is done by adding
+          comments to various parts of the code. The process can be described in
+          the following manner:
+        </p>
+        <code>
+          Source file (.cs) -> C# Compiler (csc.exe) -> XML Documentation
+          (doc.xml) -> HTML/ Visual Studio Based Documentation
+        </code>
+      </section>
+      <section class="main-section" id="C#_Documentation_Example">
+        <header>C# Documentation Example</header>
+        <p>
+          Let's take an example and then try to use the above information to get
+          an automated documentation file. The above is a typical example of an
+          application during the construction phase and then we struggle at the
+          time of maintenance as to what the function or the class was supposed
+          to do! Let's give some comments and do the needful.
+        </p>
+        <code>
+          using System; using System.Data; namespace ExampleDocumentation { //
+          // DocumentationClass: Is the class that will be used for explaining
+          the // example of automated documentation // public class
+          DocumentationClass { // // public DocumentationClass () : // Is the
+          constructor used for DocumentationClass class // public
+          DocumentationClass () { } // // public void DocumentationClassMethod:
+          Is a void method // that does not return anything and takes no
+          parameters. // It does the functionality of some addition and
+          subtraction to // get the result // public void
+          DocumentationClassMethod () { } } }
+        </code>
+        <p>
+          As you can see above, now we have added some valuable comments that
+          tend to have lots of value. Now to generate the documentation we can
+          have the following command
+        </p>
+        <code>
+          Microsoft.NET\Framework\v1.1.4322>csc csc DocumentationClass.cs
+          /doc:doc.xml
+        </code>
+        <p>
+          In the above, command /doc instructs the compiler to produce the
+          documentation named doc.xml. And this will produce the following
+          output:
+        </p>
+        <code>
+          <?xml version="1.0"?>
+          <doc>
+            <assembly>
+              <name> DocumentationClass</name>
+            </assembly>
+            <members>
+              <member name="T:ExampleDocumentation.DocumentationClass">
+                DocumentationClass: Is the class that will be used for
+                explaining the example of automated documentation
+              </member>
+              <member name="M:ExampleDocumentation.DocumentationClass.#ctor">
+                public DocumentationClass () : Is the constructor used for
+                DocumentationClass class
+              </member>
+              <member
+                name="M:ExampleDocumentation.DocumentationClass.DocumentationClassMethod"
+              >
+                public void DocumentationClassMethod: Is a void method that does
+                not return anything // and takes no parameters. //It does the
+                functionality of some addition and substation to get the result
+              </member>
+            </members>
+          </doc>
+        </code>
+      </section>
+      <section class="main-section" id="Some_points">
+        <header>Some points</header>
+        <p>
+          Some of the constants are attached usually with the commented object,
+          these are the ID's that are used to identify the type code and part.
+          Usually these are categorised in the following manner:
+        </p>
+        <ul>
+          <li>N denotes the Namespace</li>
+          <li>
+            T denotes Type, and includes class, Interface, struct, enum or
+            delegates
+          </li>
+          <li>F denotes the fields of class</li>
+          <li>P denotes the Property indexer or indexed property</li>
+          <li>
+            M denotes the Methods special methods constructor and
+            operator(overloaded)
+          </li>
+          <li>E denotes Events</li>
+          <li>
+            ! denotes an error string that C# was unable to resolve some
+            references
+          </li>
+        </ul>
+      </section>
+      <section class="main-section" id="In-depth_of_C#_Documentation">
+        <header>In-depth of C# Documentation</header>
+        <p>
+          Before we proceed in depth about the automated documentation part,
+          let's see some of the important aspects that are required to be known
+          when developing the XML based documentation. The main point is that
+          the comments needs to start with "//" as this is the way in which the
+          compiler identifies tags for XML based documentation. "//" way of
+          comments are also supported in C# but in general, the compiler ignores
+          anything that is put after this, but when the compiler encounters
+          another "/" then this indicates that this is an XML comment and needs
+          to be handled properly. Usually the three slashes are followed by the
+          XML tag, this contains the property and value along with it as needed.
+          For example:
+        </p>
+        <code>
+          // // this is a place where something is done //
+        </code>
+        <p>
+          There are various predefined tags that are available for the purpose
+          of generating the document. The developer has the freedom to use any
+          type of XML tags to document the code, only thing is that these tags
+          need to adhere to the XML syntax. The predefined tag indicates the
+          type of documentary information that is being given, and the compiler
+          validates these tags against certain aspects of these and produces the
+          output. Other elements are used for the layout and/or formatting
+          purpose. The C# compiler takes these comments embedded inside the XML
+          tags and builds the XML based documentation. It generates errors when
+          a false reference is encountered.
+        </p>
+      </section>
+      <section class="main-section" id="Problems_with_the_C#_Documenter">
+        <header>Problems with the C# Documenter</header>
+        <p>
+          The automated documentation in C# has some flaws; following are some
+          of them that need to be taken into consideration:
+        </p>
+        <ol>
+          <li>
+            If in any case if you have forgotten to mention any comments for any
+            method, it will just be ignored
+          </li>
+          <li>
+            Even if the comments are written and you have written "//" instead
+            of "//" then again the documentation will not have any reference of
+            these comments
+          </li>
+          <li>
+            While generating C# documentation whenever there is any kind of
+            return type explicitly this has to be specified
+          </li>
+        </ol>
+      </section>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>

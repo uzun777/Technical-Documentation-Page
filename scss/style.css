@@ -1,0 +1,53 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 350px auto;
+      grid-template-columns: 350px auto;
+  line-height: 1.5em;
+}
+
+header {
+  padding-top: 40px;
+  font-size: xx-large;
+  color: #ff9900;
+}
+
+nav {
+  position: fixed;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  height: 100%;
+  border-right: 2px solid green;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+nav ul li {
+  padding: 8px;
+  padding-left: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid green;
+}
+
+nav header {
+  padding: 20px;
+  border-bottom: 2px solid green;
+}
+
+main {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+code {
+  background-color: #fbedbc;
+  padding: 5px;
+  line-height: 1em;
+}
+/*# sourceMappingURL=style.css.map */
