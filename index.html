@@ -13,23 +13,23 @@
   </head>
   <body>
     <nav id="navbar">
-      <header>C# Documentation</header>
+      <header>C Documentation</header>
       <ul>
         <li><a href="#Introduction" class="nav-link">Introduction</a></li>
         <li>
-          <a href="#C#_Documentation_Example" class="nav-link"
-            >C# Documentation Example</a
+          <a href="#C_Documentation_Example" class="nav-link"
+            >C Documentation Example</a
           >
         </li>
         <li><a href="#Some_points" class="nav-link">Some points</a></li>
         <li>
-          <a href="#In-depth_of_C#_Documentation" class="nav-link"
-            >In-depth of C# Documentation</a
+          <a href="#In-depth_of_C_Documentation" class="nav-link"
+            >In-depth of C Documentation</a
           >
         </li>
         <li>
-          <a href="#Problems_with_the_C#_Documenter" class="nav-link"
-            >Problems with the C# Documenter</a
+          <a href="#Problems_with_the_C_Documenter" class="nav-link"
+            >Problems with the C Documenter</a
           >
         </li>
       </ul>
@@ -74,12 +74,16 @@
           the following manner:
         </p>
         <code>
-          Source file (.cs) -> C# Compiler (csc.exe) -> XML Documentation
-          (doc.xml) -> HTML/ Visual Studio Based Documentation
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, minima
+          molestias! Magnam, dolorem ducimus esse eaque obcaecati at corrupti,
+          assumenda, aut suscipit molestiae accusamus aliquam quam quis
+          repellendus rerum quisquam doloremque distinctio culpa voluptatum
+          voluptas blanditiis quidem beatae. Deserunt neque aperiam, alias ex
+          quae accusamus quia reprehenderit ipsa beatae architecto?
         </code>
       </section>
-      <section class="main-section" id="C#_Documentation_Example">
-        <header>C# Documentation Example</header>
+      <section class="main-section" id="C_Documentation_Example">
+        <header>C Documentation Example</header>
         <p>
           Let's take an example and then try to use the above information to get
           an automated documentation file. The above is a typical example of an
@@ -88,16 +92,24 @@
           to do! Let's give some comments and do the needful.
         </p>
         <code>
-          using System; using System.Data; namespace ExampleDocumentation { //
-          // DocumentationClass: Is the class that will be used for explaining
-          the // example of automated documentation // public class
-          DocumentationClass { // // public DocumentationClass () : // Is the
-          constructor used for DocumentationClass class // public
-          DocumentationClass () { } // // public void DocumentationClassMethod:
-          Is a void method // that does not return anything and takes no
-          parameters. // It does the functionality of some addition and
-          subtraction to // get the result // public void
-          DocumentationClassMethod () { } } }
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolore
+          nostrum illum impedit exercitationem fuga quo in enim, ad explicabo,
+          pariatur mollitia assumenda quos ut labore inventore voluptate
+          expedita quam aliquam placeat nulla eveniet! Perferendis aspernatur
+          impedit quod quis maiores at magnam aliquam, accusantium repellendus.
+          Sequi totam nesciunt, dicta excepturi neque quas, voluptate voluptas
+          laboriosam repudiandae qui perspiciatis ullam assumenda minima
+          deserunt dolore, sint in soluta harum perferendis modi reiciendis
+          tempore. Reprehenderit tenetur deleniti ratione neque laboriosam
+          numquam animi, aspernatur odit laudantium voluptates provident
+          officiis obcaecati cum. Perspiciatis tenetur nesciunt quis dignissimos
+          facere atque necessitatibus nemo consectetur assumenda odio aut, fugit
+          sapiente porro harum cupiditate iure veritatis autem quam nulla
+          voluptatum rerum ab, expedita commodi nostrum? Eum laboriosam adipisci
+          in, laborum doloribus consectetur mollitia ipsa illo quo quibusdam
+          nulla molestias exercitationem sint nemo accusamus voluptatum corrupti
+          quos culpa ea iure ex labore laudantium. Nobis asperiores recusandae
+          voluptas a, consectetur odio.
         </code>
         <p>
           As you can see above, now we have added some valuable comments that
@@ -105,8 +117,8 @@
           have the following command
         </p>
         <code>
-          Microsoft.NET\Framework\v1.1.4322>csc csc DocumentationClass.cs
-          /doc:doc.xml
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam eum
+          voluptate optio ea laborum cumque.
         </code>
         <p>
           In the above, command /doc instructs the compiler to produce the
@@ -114,29 +126,12 @@
           output:
         </p>
         <code>
-          <?xml version="1.0"?>
-          <doc>
-            <assembly>
-              <name> DocumentationClass</name>
-            </assembly>
-            <members>
-              <member name="T:ExampleDocumentation.DocumentationClass">
-                DocumentationClass: Is the class that will be used for
-                explaining the example of automated documentation
-              </member>
-              <member name="M:ExampleDocumentation.DocumentationClass.#ctor">
-                public DocumentationClass () : Is the constructor used for
-                DocumentationClass class
-              </member>
-              <member
-                name="M:ExampleDocumentation.DocumentationClass.DocumentationClassMethod"
-              >
-                public void DocumentationClassMethod: Is a void method that does
-                not return anything // and takes no parameters. //It does the
-                functionality of some addition and substation to get the result
-              </member>
-            </members>
-          </doc>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
+          corporis tempora ratione, soluta, nulla dolor totam voluptate illum
+          odio, voluptatum a facere! Vel, minus ipsa consectetur rerum
+          voluptatibus eum magni sequi officia nostrum? Atque assumenda
+          perspiciatis nisi amet? Animi voluptatum, nulla adipisci dolor odit
+          voluptate autem quaerat! Facilis, autem quaerat?
         </code>
       </section>
       <section class="main-section" id="Some_points">
@@ -165,8 +160,8 @@
           </li>
         </ul>
       </section>
-      <section class="main-section" id="In-depth_of_C#_Documentation">
-        <header>In-depth of C# Documentation</header>
+      <section class="main-section" id="In-depth_of_C_Documentation">
+        <header>In-depth of C Documentation</header>
         <p>
           Before we proceed in depth about the automated documentation part,
           let's see some of the important aspects that are required to be known
@@ -181,13 +176,19 @@
           For example:
         </p>
         <code>
-          // // this is a place where something is done //
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos velit
+          iste iure? Laudantium natus nulla odit, delectus porro incidunt ullam
+          facere distinctio. Quo magnam quidem iste, eos ut sequi voluptates
+          illum in a exercitationem corporis alias voluptate voluptatem,
+          incidunt culpa nesciunt, esse minus eveniet? Recusandae accusamus
+          beatae quod soluta adipisci perspiciatis, omnis debitis molestiae
+          vitae minus assumenda aut consectetur repudiandae!
         </code>
         <p>
-          There are various predefined tags that are available for the purpose
+          There are various codedefined tags that are available for the purpose
           of generating the document. The developer has the freedom to use any
           type of XML tags to document the code, only thing is that these tags
-          need to adhere to the XML syntax. The predefined tag indicates the
+          need to adhere to the XML syntax. The codedefined tag indicates the
           type of documentary information that is being given, and the compiler
           validates these tags against certain aspects of these and produces the
           output. Other elements are used for the layout and/or formatting
@@ -196,8 +197,8 @@
           a false reference is encountered.
         </p>
       </section>
-      <section class="main-section" id="Problems_with_the_C#_Documenter">
-        <header>Problems with the C# Documenter</header>
+      <section class="main-section" id="Problems_with_the_C_Documenter">
+        <header>Problems with the C Documenter</header>
         <p>
           The automated documentation in C# has some flaws; following are some
           of them that need to be taken into consideration:

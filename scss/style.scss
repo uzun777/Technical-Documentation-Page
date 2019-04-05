@@ -1,51 +1,83 @@
-$main-color:green;
+$main-color:black;
+$code-background: hsl(47, 100%, 50%);
+$title-color:black;
 $nav-padding:20px;
 $header-padding-top:40px;
 
 body{
     font-family: 'Raleway', sans-serif;
-    display: grid;
-    grid-template-columns:350px auto;
+    display:grid;
+    grid-template-columns:320px 1fr;
+    grid-template-areas: "nav main";
+    margin: 0px;
     line-height: 1.5em;
 }
 
 header{
     padding-top: $header-padding-top;
     font-size: xx-large;
-    color: hsl(36, 100%, 50%);
+    color: $title-color;
 }
 
 nav{
+    grid-area: nav;
     position: fixed;
-    grid-column: 1/2;
+    min-width: 320px;
     height: 100%;
-    border-right: 2px solid green;
+    border-right: 2px solid $main-color;
+
 
     ul{
         list-style-type: none;
         padding: 0px;
+        margin: 0px;
 
         li{
             padding: 8px;
             padding-left: $nav-padding;
             
             padding-bottom: 15px;
-             border-bottom: 2px solid green;
+             border-bottom: 2px solid $main-color;
+             
+             a{
+                 color:$title-color;
+                 text-decoration: none;
+             }
         }
     }
 
     header{
         padding: $nav-padding;
-        border-bottom: 2px solid green;
+        border-bottom: 2px solid $main-color;
     }
 }
 
 main{
-    grid-column: 2/3;
+    grid-area: main;
+    position: relative;
+    padding: 20px;
 }
 
 code{
-    background-color: hsl(47, 89%, 86%);
+    background-color:$code-background;
     padding: 5px;
     line-height: 1em;
 }
+
+@media only screen and (max-width: 768px) {
+
+    nav{
+        height: auto;
+        position: relative;
+        border-left: 2px solid $main-color;
+    }
+
+    body{
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "nav"
+        "main";
+    }
+
+  }
